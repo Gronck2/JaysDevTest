@@ -1,5 +1,5 @@
 def insert_into_array(arr, index, new_item):
-    return arr[:index] + [new_item] + arr[index:1]
+    return arr[:index] + [new_item] + arr[index:]
 
 def minimal_distance(word1, word2):
     n = len(word1)
