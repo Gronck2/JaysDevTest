@@ -11,7 +11,7 @@ def minimal_distance(word1: str, word2: str):
                 cur_row[j] = prev_row[j - 1]  # no new operation copy from previous list
             else: # if letters don't match check what kind of operation is less expansive
                 cur_row[j] = min(prev_row[j - 1], prev_row[j], cur_row[j - 1]) + 1
-                # operation: change, delete, insert
+                # operations: change, delete, insert
 
         prev_row = cur_row
         cur_row = [0] * (n + 1)
@@ -21,4 +21,4 @@ def minimal_distance(word1: str, word2: str):
 
 if __name__ == '__main__':
     import sys
-    minimal_distance(sys.argv[0], sys.argv[1])
+    print(minimal_distance(sys.argv[0], sys.argv[1]))
