@@ -1,10 +1,17 @@
+from typing import List
+
+
 def insert_into_array(arr, index, new_item):
     return arr[:index] + [new_item] + arr[index:]
+
+
+def create_matrix(n: int, m: int) -> List[List[int]]:
+    return [[0 for _ in range(n+1)] for _ in range(m+1)]
 
 def minimal_distance(word1, word2):
     n = len(word1)
     m = len(word2)
-    dp = [[0 for _ in range(n)] for _ in range(m)]
+    dp = create_matrix(n, m)
 
     def get_dp(i, j):
         if i < 0 or j < 0:
